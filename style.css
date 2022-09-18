@@ -10,10 +10,14 @@ p.small{
   font-size: 15px;
   color:#a5a5a5;
 }
-a{
+a.small{
   font-size: 15px;
   color:#7070ff;
 }
+a.small:hover {
+  color:#a940ff;
+}
+
 a.button {
     font-size: 22px;
     background: #eee;
@@ -28,6 +32,7 @@ a.button {
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 500;
+    text-decoration: none;
 }
 a.button:after {
   content: "";
