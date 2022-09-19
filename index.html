@@ -6,7 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatenerのホームページ</title>
   <link rel="stylesheet" href="style.css" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+  //共通パーツ読み込み
+    $(function() {
+         $("#header").load("common/header.html");
+         $("#footer").load("common/footer.html");
+  });
+  </script>
   <style>
     body {
       padding: 0;
@@ -21,9 +28,7 @@
 <body>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="88jRzqHy"></script>
-  <main>
-    <script src="include.js"></script>
-    <script>header();</script>
+    <div id="header"></div>
     <div class="wrapper">
       <h1>Hatenerです。</h1>
       <p>私のホームページです。自分の作品を貼る場所にしていきたいです。
@@ -38,9 +43,7 @@
       </nobr>
       <p>（↓ p5.jsを試験的に稼働）</p>
    </div>
-  </main>
-  <script src="include.js"></script>
-  <script>footer();</script>
+  <div id="footer"></div>
 </body>
 
 </html>
