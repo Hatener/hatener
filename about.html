@@ -6,7 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatenerのホームページ</title>
   <link rel="stylesheet" href="style.css" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+  //共通パーツ読み込み
+    $(function() {
+         $("#header").load("common/header.html");
+         $("#footer").load("common/footer.html");
+  });
+  </script>
   <style>
     body {
       padding: 0;
@@ -18,12 +25,7 @@
 <body>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="88jRzqHy"></script>
-    <header>
-      <p></p>
-      <a class="home" href="index.html"><img src="icon.png" alt="ロゴ" title="ロゴ" width="100px"></a>
-      <p  class="small">| <a  class="small" href="index.html">HOME</a>
-      | <a  class="small" href="about.html">ABOUT</a> |</p>
-    </header>
+    <div id="header"></div>
     <div class="wrapper">
       <h1>更新履歴</h1>
       <p>2022/9/18<br>サイトを公開しました。https://1step621.github.io/を参考にさせていただきました。</p>
@@ -31,12 +33,7 @@
       <a  class="button" href="https://github.com/Hatener/hatener/commits/main">詳細な更新履歴（Github）</a>
       <p></p>
    </div>
-  <footer>
-    <p>Copyright 2022 Hatener.</p>
-    <center>
-      <div class="fb-like" data-href="https://hatener.github.io/hatener/" data-width="" data-layout="box_count" data-action="like" data-size="large" data-share="true"></div>
-    </center>
-  </footer>
+  <div id="footer"></div>
 </body>
 
 </html>
