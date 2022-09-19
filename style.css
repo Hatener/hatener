@@ -8,8 +8,12 @@ header{
   margin       : auto;
   width        : 600px;
 }
+p.left{
+  text-align: left;
+  font-size: 19px;
+}
 p{
-  font-size: 20px;
+  font-size: 19px;
 }
 p.small{
   font-size: 15px;
@@ -32,7 +36,7 @@ a.home img:hover{
 }
 
 a.button {
-    font-size: 22px;
+    font-size: 21px;
     background: #eee;
     border-radius: 10px;
     position: relative;
@@ -74,7 +78,7 @@ a.button:hover:after {
 br {
 display: block;
 content: "";
-margin: 4px 0;
+margin: 11px 0;
 }
 @font-face{
   font-family:"azuki";
@@ -83,7 +87,7 @@ margin: 4px 0;
 
 body {
     font-family: "azuki";
-    line-height: 1.5;
+    line-height: 1.2;
 }
 .fb-like{
   padding: 20px 0;
