@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatenerのホームページ</title>
+  <link rel="stylesheet" href="../style.css" type="text/css">
+  <link rel="icon" href="favicons/favicon.ico" id="favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+  //共通パーツ読み込み
+    $(function() {
+         $("#header").load("../common/header.html");
+         $("#footer").load("../common/footer.html");
+  });
+  </script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="88jRzqHy"></script>
+    <div id="header"></div>
+    <div class="wrapper">
+        <h1>Blenderを触ってみた話<p class="small">2022/10/1</p></h1>
+        <p style="margin-bottom: 3em;">ちょっと前までp5.jsを学習しようとしてたんですが、WebGLゲームを見てから「3dええなぁ...」と思い始め、Blenderに手を染めてしまいました...</p>
+        <p style="margin-bottom: 2em;">風の噂だと難しいと聞いてたので身構えていましたが、Youtubeの解説動画が優秀だったのでスムーズにできました。</p>
+        <p class="small" >（参考にさせてもらった動画 → 「<a href="https://www.youtube.com/watch?v=S6aAvxUx2ko">
+        【初心者向け】世界一やさしいBlender入門！使い方＆導入〜画像作成までを徹底解説【最短で3DCGデビュー】</a>」</p>
+        <img src="221001.png" width=450 height=300 alt="画像">
+        <p class="small">//ほぼ解説動画通りに作っただけなので、この画像の価値は無に等しいです。</p>
+        <p style="margin-top: 2em; margin-bottom: 2em;">Blenderのショートカットキーが多く、間違えて押したらモード変わったりしたので、「ショートカットキー一覧」をブックマークに登録しました。</p>
+        <p style="margin-top: 1em; margin-bottom: 2em;">さて、次は何を作りましょうか。最終目標はゲームマップです。</p>
+   </div>
+  <div id="footer"></div>
+</body>
+
+</html>
