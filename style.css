@@ -121,6 +121,7 @@ a.blog {
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 500;
+    margin : 14px ;
     text-decoration: none;
 }
 a.blog:after {
@@ -146,4 +147,36 @@ a.blog:hover {
 }
 a.blog:hover:after {
   right: 1.4rem;
+}
+li{
+    display:block;
+}
+
+
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.pagination li{
+    margin: 5px;
+    border-radius: 8px;
+}
+.pagination a{
+    display: block;
+    text-decoration: none;
+    background-color: #eee;
+    color: #333;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+.active a{
+    background-color: #6bb6ff;
+}
+.pagination a:hover{
+    background-color: #333;
+    color: #fff;
 }
