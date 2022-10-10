@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatenerのホームページ</title>
+  <link rel="stylesheet" href="../style.css" type="text/css">
+  <link rel="icon" href="../favicons/favicon.ico" id="favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+
+  //共通パーツ読み込み
+    $(function() {
+         $("#header").load("common/header.html");
+         $("#footer").load("common/footer.html");
+  });
+  </script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="88jRzqHy"></script>
+    <div id="header"></div>
+    <div class="wrapper">
+        <h1>Three.jsで3Dモデルを読み込んでみた<p class="small">2022/10/9</p></h1>
+        <p style="margin-bottom: 3em;">Three.jsにBlenderで作ったものを読み込みます。</p>
+        <p class="small" >（参考にさせてもらったサイト → 「<a href="https://notetoself-dy.com/blender-threejs-gltf/">
+        blenderで書いたグラスをThree.jsで読み込んでみた</a>」</p>
+        <p class="small" >　参考にさせてもらったBlender講座 → 「<a href="https://www.youtube.com/watch?v=JKCQrDZ52X8">
+          【blender3.0】ミニチュアな部屋を作ろう！【初心者向けチュートリアル】</a>」）</p>
+          <div id="WebGL-output" style="float: left;">
+              </div>
+
+          <script type="module">
+              import * as THREE from'https://unpkg.com/three@0.126.1/build/three.module.js';
+              import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
+              import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
+
+              let camera;
+              let scene;
+              let renderer;
+              let model;
+
+              init();
+              animate();
+
+              function init() {
+                  //シーンの作成
+                  scene = new THREE.Scene();
+
+                  //カメラの作成
+                  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1300);
+                  //カメラセット
+                  camera.position.set(50, 30, 30);
+                  camera.lookAt(new THREE.Vector3(0, 10, 0));
+
+                   // 滑らかにカメラコントローラーを制御する
+                  const controls = new OrbitControls(camera, document.body);
+                  controls.enableDamping = true;
+                  controls.dampingFactor = 0.2;
+
+                  //光源
+                  const dirLight = new THREE.SpotLight(0xffffff,1.5);//color,強度
+                  dirLight.position.set(20, 5, 10);
+                  scene.add(dirLight);
+
+                  //レンダラー
+                  renderer = new THREE.WebGLRenderer({
+                      alpha: true,
+                      antialias: true
+                  });
+                  renderer.setClearColor(new THREE.Color(0xffffff));
+                  renderer.setSize(window.innerWidth, window.innerHeight);
+
+                  //glbファイルの読み込み
+                  const loader = new GLTFLoader();
+
+                  loader.load('second.glb', function(gltf) {
+                      model = gltf.scene;
+                      model.traverse((object) => { //モデルの構成要素
+                          if(object.isMesh) { //その構成要素がメッシュだったら
+                          object.material.trasparent = true;//透明許可
+                          object.material.opacity = 0.8;//透過
+                          object.material.depthTest = true;//陰影で消える部分
+                          }})
+                      scene.add(model);
+                  }, undefined, function(e) {
+                      console.error(e);
+                  });
+
+                  document.getElementById("WebGL-output").appendChild(renderer.domElement);
+              }
+
+              function animate() {
+                  requestAnimationFrame(animate);
+                  renderer.render(scene, camera);
+              }
+
+          </script>
+        <p class="small">//それだけ</p>
+   </div>
+  <div id="footer"></div>
+</body>
+
+</html>
