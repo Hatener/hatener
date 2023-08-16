@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatenerのホームページ</title>
+  <link rel="stylesheet" href="../style.css" type="text/css">
+  <link rel="icon" href="../favicons/favicon.ico" id="favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+  //共通パーツ読み込み
+    $(function() {
+         $("#header").load("common/header.html");
+         $("#footer").load("common/footer.html");
+  });
+  </script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v15.0" nonce="88jRzqHy"></script>
+    <div id="header"></div>
+    <div class="wrapper">
+        <h1>デジ絵してる<p class="small">2023/8/16</p></h1>
+        <p style="margin-bottom: 1em;">CLIP STUDIO PROを使用しました。</p>
+        <img src="illust2.png" width=480 height=360 alt="画像">
+        <p class="small" >//UndertaleのCharaです</p>
+        <img src="illust.png" width=450 height=450 alt="画像">
+        <p class="small" >//オリジナルです</p>
+        <p>アナログとの差を感じました。自由変形がとても便利です。</p>
+        <p style="margin-bottom: 2em;">手の形がどうしてもイメージできないので、練習していきたいです。</p>
+   </div>
+  <div id="footer"></div>
+</body>
+
+</html>
